@@ -7,7 +7,7 @@ The code requires some common packages:
 
 ```shell
 # python>=3.6
-# Anaconda: it is not necessary but recommended since it contains a lot of packages.
+# Anaconda: it is not necessary but recommended since it contains a lot of common packages.
 conda create -n py36 python=3.6 
 source activate py36
 
@@ -38,13 +38,13 @@ The model will be examined in the end of training. If you want to test a model i
 python test_mmhh.py --gpu_id=0 --dataset="coco_80" --model_path "../snapshot/hash/MMHH-train_coco_80_coco_80_iter_01000" --batch_size=48 --radius 2 --opt-test --annotation="MMHH-test" --test_sample_ratio 1.0
 ```
 
-The basic metric functions refer to [DeepHash](https://github.com/thulab/DeepHash)  (MAP@H<=2) and [HashNet](https://github.com/thuml/HashNet/) (MAP@TopK). We optimize them carefully, which speed up by $\times 2\sim \times 10$. 
+The basic metric functions refer to [DeepHash](https://github.com/thulab/DeepHash)  (MAP@H<=2) and [HashNet](https://github.com/thuml/HashNet/) (MAP@TopK). We optimize them carefully and speed up by ×2 to ×10. 
 
 Due to the `numpy` randomness, the optimized version may be slightly different from the original ones, but we believe it doesn't matter after lots of tests.
 
 ## Acknowledgments
 
-Our code mainly refer to the following repositories, we want to thanks for their invaluable help sincerely:
+Our code mainly refers to the following repositories, we want to thanks for their invaluable help sincerely:
 
 *  [HashNet](https://github.com/thuml/HashNet/) : the dataset, data processing, the network backbones, etc..
 *  [DeepHash](https://github.com/thulab/DeepHash): the DCH implementation and the training parameters.
